@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NoteController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,12 +28,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::get('/notes', function () {
-    
-});
-Route::get("/notes/{id}", function($id){});
-Route::post("/notes", function(){});
-//edit
-//update
-//delete
+Route::resource('/notes', NoteController::class)->middleware(['auth']);
 require __DIR__.'/auth.php';
