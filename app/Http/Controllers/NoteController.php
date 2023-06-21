@@ -40,9 +40,8 @@ class NoteController extends Controller
     {
         $request->validate(['title' => 'required|max:20', 'text' => 'required']);
 
-        Note::create([
+        Auth::user()->notes()->create([
             'uuid' => Str::uuid(),
-            'user_id' => Auth::id(),
             'title' => $request->title,
             'text' => $request->text
         ]);
