@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Notes') }}
+            {{ request()->routeIs('notes.index') ? __('Notes') : __('Trash') }}
         </h2>
     </x-slot>
     <div class="py-12">
@@ -15,8 +15,10 @@
 
                 </div>
             @endif
-            <a class="px-4 py-2 font-bold text-white bg-indigo-500 rounded hover:bg-indigo-600"
-                href="{{ route('notes.create') }}">+ New Note</a>
+            @if (request()->routeIs('notes.index'))
+                <a class="px-4 py-2 font-bold text-white bg-indigo-500 rounded hover:bg-indigo-600"
+                    href="{{ route('notes.create') }}">+ New Note</a>
+            @endif
             @forelse ($notes as $note)
                 <div class="p-6 my-8 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">
                     <h2 class="text-2xl font-bold">
@@ -29,7 +31,14 @@
                 </div>
 
             @empty
-                <p class="my-3 dark:text-white">You have no notes yet</p>
+
+                <p class="my-3 dark:text-white">
+                    @if (request()->routeIs('notes.index'))
+                        You have no notes yet.
+                </p>
+            @else
+                You don't have items in the trash.
+            @endif
             @endforelse
             <br>
             {{ $notes->links() }}
