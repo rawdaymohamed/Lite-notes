@@ -30,7 +30,8 @@
                             @csrf
                             @method('delete')
                             <button type="submit"
-                                class="px-4 py-2 ml-2 font-bold text-white bg-red-500 rounded hover:bg-red-600">
+                                class="px-4 py-2 ml-2 font-bold text-white bg-red-500 rounded hover:bg-red-600"
+                                onclick="return confirm('Are you sure you want to move this item to trash?')">
                                 Move to Trash</button>
                         </form>
                     </div>
@@ -59,13 +60,13 @@
                                 class="px-4 py-2 font-bold text-white bg-indigo-500 rounded hover:bg-indigo-600"
                                 href="{{ route('trashed.update', $note) }}">Restore Note</button>
                         </form>
-                        <form action="{{ route('notes.destroy', $note) }}" method="post">
+                        <form action="{{ route('trashed.destroy', $note) }}" method="post">
                             @csrf
                             @method('delete')
                             <button type="submit"
-                                onclick="return confirm('Are you sure you want to delete this note permenantly?')"
+                                onclick="return confirm('Are you sure you want to delete this note forever?')"
                                 class="px-4 py-2 ml-2 font-bold text-white bg-red-500 rounded hover:bg-red-600">
-                                Delete permenantly</button>
+                                Delete Forever</button>
                         </form>
                     </div>
                 </div>
