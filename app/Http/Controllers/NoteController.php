@@ -15,10 +15,10 @@ class NoteController extends Controller
     {
         $userId = Auth::user()->id;
         $notes = Note::where('user_id', $userId)->latest('updated_at')->get();
-        $notes->each(function($note){
-            dump($note->title);
-        });
-
+        // $notes->each(function($note){
+        //     dump($note->title);I
+        // });
+        return view('notes.index')->with('notes', $notes);
     }
 
     /**
