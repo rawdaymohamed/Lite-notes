@@ -29,6 +29,6 @@ class TrashedNoteController extends Controller
             return abort(403);
         }
         $note->restore();
-        return view('notes.show')->with('note', $note);
+        return to_route('notes.show', $note)->with("success", "Note restored successfully");
     }
 }
