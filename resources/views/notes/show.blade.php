@@ -16,10 +16,10 @@
 
                     <div class="flex">
                         <p class="opacity-70 dark:text-white">
-                            Created at: <strong>{{ $note->created_at->diffForHumans() }}</strong>
+                            Created: <strong>{{ $note->created_at->diffForHumans() }}</strong>
                         </p>
                         <p class="ml-3 opacity-70 dark:text-white">
-                            Updated at: <strong>{{ $note->updated_at->diffForHumans() }}</strong>
+                            Updated: <strong>{{ $note->updated_at->diffForHumans() }}</strong>
                         </p>
                     </div>
                     <div class="flex">
@@ -48,7 +48,7 @@
                     <div class="flex">
 
                         <p class="ml-3 opacity-70 dark:text-white">
-                            Deleted at: <strong>{{ $note->deleted_at->diffForHumans() }}</strong>
+                            Deleted: <strong>{{ $note->deleted_at->diffForHumans() }}</strong>
                         </p>
                     </div>
                     <div class="flex">
