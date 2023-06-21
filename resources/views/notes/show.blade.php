@@ -6,7 +6,7 @@
                 <p class="opacity-70 dark:text-white">
                     Created at: <strong>{{ $note->created_at->diffForHumans() }}</strong>
                 </p>
-                <p class="ml-5 opacity-70 dark:text-white">
+                <p class="ml-3 opacity-70 dark:text-white">
                     Updated at: <strong>{{ $note->updated_at->diffForHumans() }}</strong>
                 </p>
             </div>
