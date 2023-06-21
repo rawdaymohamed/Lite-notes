@@ -17,9 +17,12 @@
                     </p>
                     <span class="block mt-4 text-sm opacity-70">{{ $note->updated_at->diffForHumans() }}</span>
                 </div>
+                <br>
             @empty
                 <p>You have no notes yet</p>
             @endforelse
+            <br>
+            {{ $notes->links() }}
         </div>
     </div>
 </x-app-layout>
