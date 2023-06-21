@@ -28,7 +28,7 @@
                         @method('delete')
                         <button type="submit" onclick="return confirm('Are you sure you want to delete this note?')"
                             class="px-4 py-2 ml-2 font-bold text-white bg-red-500 rounded hover:bg-red-600">
-                            Move to trash</button>
+                            Move to Trash</button>
                     </form>
                 </div>
             </div>
