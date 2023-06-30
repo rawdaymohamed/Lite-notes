@@ -34,12 +34,14 @@ cd Lite-notes
 
 ```
 composer install
+npm i
 ```
 
 #### Run the app
 
 ```
 php artisan serve
+npm run dev
 ```
 
 Then visit `http://localhost:8000/`
