@@ -23,7 +23,7 @@
                         </p>
                     </div>
                     <div class="flex">
-                        onclick="return confirm('Are you sure you want to delete this note?')"
+                        {{-- onclick="return confirm('Are you sure you want to delete this note?')" --}}
                         <a class="px-4 py-2 font-bold text-white bg-indigo-500 rounded hover:bg-indigo-600"
                             href="{{ route('notes.edit', $note) }}">Edit Note</a>
                         <form action="{{ route('notes.destroy', $note) }}" method="post">
