@@ -26,7 +26,7 @@ composer --version
 #### Clone the app
 
 ```
-git clone https://github.com/rawda-yasser/Lite-notes
+git clone https://github.com/rawdaymohamed/Lite-notes
 cd Lite-notes
 ```
 
